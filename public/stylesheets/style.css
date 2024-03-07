@@ -1,0 +1,64 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.custom-ul {
+  /* Predefined space for the list */
+  height: 450px;
+  overflow-y: auto; /* Add a vertical scroll */
+  border: 1px solid #ccc;
+  padding: 10px;
+ }
+
+ .tweet-container {
+  position: relative;
+  border: 1px solid #ccc;
+  margin-bottom: 10px; /* Space between tweet containers */
+  padding: 10px; /* Padding inside tweet container */
+  /*height: 85px;*/
+  overflow: hidden;
+  word-wrap: break-word;
+ }
+ .tweet-buttons {
+  margin-top: 30px;
+  position: absolute;
+  bottom: 0; /* Align buttons at the bottom of the container */
+  right: 0; /* Align buttons at the right of the container */
+  margin-bottom: 5px;
+  width: 200px;
+ }
+ .tweet-buttons button {
+  margin-right: 5px; /* Space between buttons */
+  font-size: 12px; /* Font size smaller for buttons */
+  margin-bottom: -15px;
+ }
+ .center-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+ }
+
+ /* LOGOUT */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center the content vertically */
+ }
+ .logout-title {
+  font-size: 48px;
+ }
+ .logout-message {
+  font-size: 24px;
+ }
+ .logout-redirect-message {
+  margin-top: 15px;
+ }

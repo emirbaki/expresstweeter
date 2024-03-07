@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+
+    head
+        meta(charset='utf-8')
+        title Title2
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+
+    body
+        h1 Tweets with Hashtags
+        each tweet in tweets
+        
+            p.tweet #{tweet.tweet_content}
+            ul
+            each hashtag in tweet.hashtags.replace("#", " ").split(',')
+                li
+                    a(href='/hashtag/' + hashtag.trim()) #{hashtag.trim()}

@@ -1,0 +1,13 @@
+extends layout
+
+
+block content
+    .logout-page
+        .center-content
+            h1.logout-title Thank you for your visit!
+            p.logout-message See you soon!
+            p.logout-redirect-message You are being redirected to the main page...
+            script.
+                setTimeout(function() {
+                    window.location.href = '/';
+                }, 2000);

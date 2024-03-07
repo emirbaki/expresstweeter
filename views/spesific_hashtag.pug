@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= `Tweets with Hashtag ${hashtag}`
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+  body
+    h1= `Tweets with Hashtag ${hashtag}`
+
+    each tweet in tweets
+        .card.mb-3
+          .card-body
+            p.card-text!= tweet.text
+          .card-footer.text-muted
+            p.card-text Username: #{tweet.user}
+    //- each tweet in tweets
+    //-   .tweet
+    //-     p= tweet.tweet_content
+    //-     p= tweet.tweet_user

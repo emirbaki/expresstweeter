@@ -1,0 +1,40 @@
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    title Title2
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+  body
+    .modal-dialog
+      .modal-content
+        // Modal Header
+        .modal-header
+          h1#myModalLabel.modal-title Tweet Feed
+        // Modal Body
+        .modal-body
+          form(role='form' method='POST' action='/add')
+            div.form-group
+              input#name.form-control(type='text', placeholder='' name='text')
+            button.btn.btn-primary(type="submit", name="tweetBtn" style='margin-left:240px;') Tweet
+            if message
+              p.center-text(style='color: red;') #{message}
+          ul.custom-ul
+            each tweet in messageList
+              .tweet-container
+                p!= tweet.user + ": "  + tweet.text
+                // Note: Using != to output HTML unescaped
+                .tweet-buttons
+                  form(action='/delete', method='POST' style='display:inline-block;')
+                    input(type='hidden', name='tweetId', value=tweet.id)
+                    button.btn.btn-danger(type='submit') Delete
+                  button.btn.btn-info(type='button' style='float:right;') Edit
+        // Modal Footer
+        .modal-footer(style='text-align: center;')
+          form(action='/user/login', method='GET' style='display:inline-block; margin-right:5px;')
+            button.btn.btn-primary() Login
+          form(action='/user/logout', method='POST' style='display:inline-block;')
+            button.btn.btn-danger() Logout
+
+
+
