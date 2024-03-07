@@ -14,6 +14,8 @@ html(lang="en")
             p.card-text!= tweet.text
           .card-footer.text-muted
             p.card-text Username: #{tweet.user}
+    div(class = "btn btn-secondary rounded-pill px-3")
+      a(href='/' class = "text-light") Go back home
     //- each tweet in tweets
     //-   .tweet
     //-     p= tweet.tweet_content
